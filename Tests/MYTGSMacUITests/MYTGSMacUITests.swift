@@ -25,7 +25,7 @@ final class MYTGSMacUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts["Signed Out"].exists || app.staticTexts["Signed out"].exists)
 
         for section in ["Dashboard", "Tasks", "Timetable", "EPR", "Account"] {
-            XCTAssertTrue(app.descendants(matching: .any)["sidebar-\(section)"].firstMatch.exists)
+            XCTAssertTrue(app.staticTexts[section].firstMatch.exists)
         }
     }
 
