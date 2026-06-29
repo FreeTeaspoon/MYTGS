@@ -49,6 +49,10 @@ struct LoginWebView: NSViewRepresentable {
 struct WebHTMLView: NSViewRepresentable {
     var html: String
 
+    func makeCoordinator() -> Coordinator {
+        Coordinator()
+    }
+
     func makeNSView(context: Context) -> WKWebView {
         let webView = WKWebView()
         webView.setValue(false, forKey: "drawsBackground")
@@ -70,6 +74,14 @@ struct WebHTMLView: NSViewRepresentable {
         <body>\(body)</body>
         </html>
         """
+        guard page != context.coordinator.loadedPage else {
+            return
+        }
+        context.coordinator.loadedPage = page
         nsView.loadHTMLString(page, baseURL: nil)
+    }
+
+    final class Coordinator {
+        var loadedPage = ""
     }
 }
