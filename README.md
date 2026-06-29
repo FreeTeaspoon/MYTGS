@@ -14,11 +14,13 @@ Implemented scaffold:
 
 ## Open In Xcode
 
-Open this repository folder, or open `Package.swift` directly in Xcode 26.
+Open `MYTGS.xcodeproj` in Xcode 26.
 
-Run the `MYTGSMac` scheme.
+Run the `MYTGS` scheme to launch the app as a real `MYTGS.app` bundle.
 
 ## Command Line
+
+The Swift package remains available for command-line development and core checks:
 
 ```sh
 swift build --product MYTGSMac
@@ -27,7 +29,6 @@ swift run MYTGSCoreChecks
 
 ## Remaining Production Work
 
-- Promote the Swift package into a signed app bundle or Xcode project for distribution.
 - Configure Apple Developer signing, hardened runtime, notarization, and direct updates.
 - Add sanitized Firefly fixtures for broader tests.
 - Finish polishing macOS 26-specific UI behavior once the app bundle is in place.

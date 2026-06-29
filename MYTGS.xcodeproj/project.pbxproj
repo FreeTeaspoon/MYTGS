@@ -1,0 +1,553 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		600000000000000000000001 /* CacheStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500000000000000000000001 /* CacheStore.swift */; };
+		600000000000000000000002 /* CalendarService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500000000000000000000002 /* CalendarService.swift */; };
+		600000000000000000000003 /* DateCoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500000000000000000000003 /* DateCoding.swift */; };
+		600000000000000000000004 /* EPRParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500000000000000000000004 /* EPRParser.swift */; };
+		600000000000000000000005 /* FireflyClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500000000000000000000005 /* FireflyClient.swift */; };
+		600000000000000000000006 /* KeychainTokenStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500000000000000000000006 /* KeychainTokenStore.swift */; };
+		600000000000000000000007 /* LocalAPIServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500000000000000000000007 /* LocalAPIServer.swift */; };
+		600000000000000000000008 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500000000000000000000008 /* Models.swift */; };
+		600000000000000000000009 /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500000000000000000000009 /* SettingsStore.swift */; };
+		60000000000000000000000A /* TaskSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50000000000000000000000A /* TaskSearch.swift */; };
+		60000000000000000000000B /* TimetableEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50000000000000000000000B /* TimetableEngine.swift */; };
+		600000000000000000000101 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500000000000000000000101 /* AppModel.swift */; };
+		600000000000000000000102 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500000000000000000000102 /* ContentView.swift */; };
+		600000000000000000000103 /* FloatingClockPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500000000000000000000103 /* FloatingClockPanel.swift */; };
+		600000000000000000000104 /* MYTGSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500000000000000000000104 /* MYTGSApp.swift */; };
+		600000000000000000000105 /* RefreshStepError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500000000000000000000105 /* RefreshStepError.swift */; };
+		600000000000000000000106 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500000000000000000000106 /* SettingsView.swift */; };
+		600000000000000000000107 /* Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500000000000000000000107 /* Views.swift */; };
+		600000000000000000000108 /* WebViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500000000000000000000108 /* WebViews.swift */; };
+		600000000000000000000201 /* MYTGSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 500000000000000000000302 /* MYTGSCore.framework */; };
+		600000000000000000000202 /* MYTGSCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 500000000000000000000302 /* MYTGSCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		700000000000000000000001 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 100000000000000000000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 200000000000000000000002;
+			remoteInfo = MYTGSCore;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		300000000000000000000003 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				600000000000000000000202 /* MYTGSCore.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		500000000000000000000001 /* CacheStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheStore.swift; sourceTree = "<group>"; };
+		500000000000000000000002 /* CalendarService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarService.swift; sourceTree = "<group>"; };
+		500000000000000000000003 /* DateCoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCoding.swift; sourceTree = "<group>"; };
+		500000000000000000000004 /* EPRParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EPRParser.swift; sourceTree = "<group>"; };
+		500000000000000000000005 /* FireflyClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireflyClient.swift; sourceTree = "<group>"; };
+		500000000000000000000006 /* KeychainTokenStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainTokenStore.swift; sourceTree = "<group>"; };
+		500000000000000000000007 /* LocalAPIServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalAPIServer.swift; sourceTree = "<group>"; };
+		500000000000000000000008 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		500000000000000000000009 /* SettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStore.swift; sourceTree = "<group>"; };
+		50000000000000000000000A /* TaskSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskSearch.swift; sourceTree = "<group>"; };
+		50000000000000000000000B /* TimetableEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableEngine.swift; sourceTree = "<group>"; };
+		500000000000000000000101 /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+		500000000000000000000102 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		500000000000000000000103 /* FloatingClockPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingClockPanel.swift; sourceTree = "<group>"; };
+		500000000000000000000104 /* MYTGSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MYTGSApp.swift; sourceTree = "<group>"; };
+		500000000000000000000105 /* RefreshStepError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshStepError.swift; sourceTree = "<group>"; };
+		500000000000000000000106 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		500000000000000000000107 /* Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views.swift; sourceTree = "<group>"; };
+		500000000000000000000108 /* WebViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViews.swift; sourceTree = "<group>"; };
+		500000000000000000000201 /* MYTGS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MYTGS.entitlements; sourceTree = "<group>"; };
+		500000000000000000000202 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		500000000000000000000203 /* ImplementationNotes.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ImplementationNotes.md; sourceTree = "<group>"; };
+		500000000000000000000204 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		500000000000000000000301 /* MYTGS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MYTGS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		500000000000000000000302 /* MYTGSCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MYTGSCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		300000000000000000000002 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				600000000000000000000201 /* MYTGSCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		300000000000000000000005 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		100000000000000000000002 = {
+			isa = PBXGroup;
+			children = (
+				500000000000000000000204 /* Package.swift */,
+				100000000000000000000004 /* Sources */,
+				100000000000000000000005 /* Config */,
+				100000000000000000000006 /* Docs */,
+				500000000000000000000202 /* README.md */,
+				100000000000000000000003 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		100000000000000000000003 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				500000000000000000000301 /* MYTGS.app */,
+				500000000000000000000302 /* MYTGSCore.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		100000000000000000000004 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				100000000000000000000007 /* MYTGSCore */,
+				100000000000000000000008 /* MYTGSMac */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		100000000000000000000005 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				500000000000000000000201 /* MYTGS.entitlements */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		100000000000000000000006 /* Docs */ = {
+			isa = PBXGroup;
+			children = (
+				500000000000000000000203 /* ImplementationNotes.md */,
+			);
+			path = Docs;
+			sourceTree = "<group>";
+		};
+		100000000000000000000007 /* MYTGSCore */ = {
+			isa = PBXGroup;
+			children = (
+				500000000000000000000001 /* CacheStore.swift */,
+				500000000000000000000002 /* CalendarService.swift */,
+				500000000000000000000003 /* DateCoding.swift */,
+				500000000000000000000004 /* EPRParser.swift */,
+				500000000000000000000005 /* FireflyClient.swift */,
+				500000000000000000000006 /* KeychainTokenStore.swift */,
+				500000000000000000000007 /* LocalAPIServer.swift */,
+				500000000000000000000008 /* Models.swift */,
+				500000000000000000000009 /* SettingsStore.swift */,
+				50000000000000000000000A /* TaskSearch.swift */,
+				50000000000000000000000B /* TimetableEngine.swift */,
+			);
+			path = MYTGSCore;
+			sourceTree = "<group>";
+		};
+		100000000000000000000008 /* MYTGSMac */ = {
+			isa = PBXGroup;
+			children = (
+				500000000000000000000101 /* AppModel.swift */,
+				500000000000000000000102 /* ContentView.swift */,
+				500000000000000000000103 /* FloatingClockPanel.swift */,
+				500000000000000000000104 /* MYTGSApp.swift */,
+				500000000000000000000105 /* RefreshStepError.swift */,
+				500000000000000000000106 /* SettingsView.swift */,
+				500000000000000000000107 /* Views.swift */,
+				500000000000000000000108 /* WebViews.swift */,
+			);
+			path = MYTGSMac;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		200000000000000000000001 /* MYTGS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 400000000000000000000002 /* Build configuration list for PBXNativeTarget "MYTGS" */;
+			buildPhases = (
+				300000000000000000000001 /* Sources */,
+				300000000000000000000002 /* Frameworks */,
+				300000000000000000000003 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				700000000000000000000002 /* PBXTargetDependency */,
+			);
+			name = MYTGS;
+			productName = MYTGS;
+			productReference = 500000000000000000000301 /* MYTGS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		200000000000000000000002 /* MYTGSCore */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 400000000000000000000003 /* Build configuration list for PBXNativeTarget "MYTGSCore" */;
+			buildPhases = (
+				300000000000000000000004 /* Sources */,
+				300000000000000000000005 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MYTGSCore;
+			productName = MYTGSCore;
+			productReference = 500000000000000000000302 /* MYTGSCore.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		100000000000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2600;
+				LastUpgradeCheck = 2600;
+				TargetAttributes = {
+					200000000000000000000001 = {
+						CreatedOnToolsVersion = 26.0;
+						ProvisioningStyle = Automatic;
+					};
+					200000000000000000000002 = {
+						CreatedOnToolsVersion = 26.0;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 400000000000000000000001 /* Build configuration list for PBXProject "MYTGS" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 100000000000000000000002;
+			productRefGroup = 100000000000000000000003 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				200000000000000000000001 /* MYTGS */,
+				200000000000000000000002 /* MYTGSCore */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		300000000000000000000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				600000000000000000000101 /* AppModel.swift in Sources */,
+				600000000000000000000102 /* ContentView.swift in Sources */,
+				600000000000000000000103 /* FloatingClockPanel.swift in Sources */,
+				600000000000000000000104 /* MYTGSApp.swift in Sources */,
+				600000000000000000000105 /* RefreshStepError.swift in Sources */,
+				600000000000000000000106 /* SettingsView.swift in Sources */,
+				600000000000000000000107 /* Views.swift in Sources */,
+				600000000000000000000108 /* WebViews.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		300000000000000000000004 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				600000000000000000000001 /* CacheStore.swift in Sources */,
+				600000000000000000000002 /* CalendarService.swift in Sources */,
+				600000000000000000000003 /* DateCoding.swift in Sources */,
+				600000000000000000000004 /* EPRParser.swift in Sources */,
+				600000000000000000000005 /* FireflyClient.swift in Sources */,
+				600000000000000000000006 /* KeychainTokenStore.swift in Sources */,
+				600000000000000000000007 /* LocalAPIServer.swift in Sources */,
+				600000000000000000000008 /* Models.swift in Sources */,
+				600000000000000000000009 /* SettingsStore.swift in Sources */,
+				60000000000000000000000A /* TaskSearch.swift in Sources */,
+				60000000000000000000000B /* TimetableEngine.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		700000000000000000000002 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 200000000000000000000002 /* MYTGSCore */;
+			targetProxy = 700000000000000000000001 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		800000000000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		800000000000000000000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		800000000000000000000003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CODE_SIGN_ENTITLEMENTS = Config/MYTGS.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_HARDENED_RUNTIME = NO;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = MYTGS;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 0.1.0;
+				OTHER_SWIFT_FLAGS = "$(inherited) -enable-upcoming-feature StrictConcurrency";
+				PRODUCT_BUNDLE_IDENTIFIER = com.freeteaspoon.mytgs;
+				PRODUCT_NAME = MYTGS;
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		800000000000000000000004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CODE_SIGN_ENTITLEMENTS = Config/MYTGS.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_HARDENED_RUNTIME = NO;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = MYTGS;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 0.1.0;
+				OTHER_SWIFT_FLAGS = "$(inherited) -enable-upcoming-feature StrictConcurrency";
+				PRODUCT_BUNDLE_IDENTIFIER = com.freeteaspoon.mytgs;
+				PRODUCT_NAME = MYTGS;
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		800000000000000000000005 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INSTALL_PATH = "@rpath";
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 0.1.0;
+				OTHER_SWIFT_FLAGS = "$(inherited) -enable-upcoming-feature StrictConcurrency";
+				PRODUCT_BUNDLE_IDENTIFIER = com.freeteaspoon.mytgs.core;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		800000000000000000000006 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INSTALL_PATH = "@rpath";
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 0.1.0;
+				OTHER_SWIFT_FLAGS = "$(inherited) -enable-upcoming-feature StrictConcurrency";
+				PRODUCT_BUNDLE_IDENTIFIER = com.freeteaspoon.mytgs.core;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		400000000000000000000001 /* Build configuration list for PBXProject "MYTGS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				800000000000000000000001 /* Debug */,
+				800000000000000000000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		400000000000000000000002 /* Build configuration list for PBXNativeTarget "MYTGS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				800000000000000000000003 /* Debug */,
+				800000000000000000000004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		400000000000000000000003 /* Build configuration list for PBXNativeTarget "MYTGSCore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				800000000000000000000005 /* Debug */,
+				800000000000000000000006 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 100000000000000000000001 /* Project object */;
+}
