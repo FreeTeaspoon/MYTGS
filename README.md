@@ -27,8 +27,17 @@ swift build --product MYTGSMac
 swift run MYTGSCoreChecks
 ```
 
+## Release Prep
+
+Release signing is prepared but not active until local Apple Developer details are added. Copy `Config/Signing.local.xcconfig.example` to `Config/Signing.local.xcconfig`, fill in the private local values, then use:
+
+```sh
+Scripts/release.sh preflight
+```
+
+The Sparkle feed is prepared for `https://freeteaspoon.github.io/MYTGS-MAC/appcast.xml`. See `Docs/Release.md` for the full direct-distribution flow.
+
 ## Remaining Production Work
 
-- Configure Apple Developer signing, hardened runtime, notarization, and direct updates.
 - Add sanitized Firefly fixtures for broader tests.
 - Finish polishing macOS 26-specific UI behavior once the app bundle is in place.

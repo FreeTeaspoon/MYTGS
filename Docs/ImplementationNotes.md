@@ -14,6 +14,6 @@ This is implemented as a root-level Swift package plus `MYTGS.xcodeproj`. Open t
 
 ## Remaining Production Work
 
-- Configure Apple Developer signing, hardened runtime, notarization, Sparkle `SUFeedURL`, and Sparkle EdDSA appcast signing.
+- Install local Apple Developer credentials, generate the Sparkle EdDSA key, and run the prepared release script.
 - Add sanitized live Firefly fixtures for every endpoint.
 - Decide whether `com.freeteaspoon.mytgs` needs an Apple Developer team-specific prefix before public distribution.

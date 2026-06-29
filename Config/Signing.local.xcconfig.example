@@ -1,0 +1,7 @@
+// Copy this file to Config/Signing.local.xcconfig and fill in your real values.
+// Config/Signing.local.xcconfig is ignored by git.
+
+MYTGS_DEVELOPMENT_TEAM = ABCDE12345
+MYTGS_CODE_SIGN_IDENTITY = Developer ID Application: Your Name (ABCDE12345)
+MYTGS_NOTARY_PROFILE = MYTGS-notarytool
+MYTGS_SPARKLE_PUBLIC_ED_KEY = paste-the-sparkle-public-ed-key-here

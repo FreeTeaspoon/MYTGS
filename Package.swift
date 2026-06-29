@@ -12,6 +12,9 @@ let package = Package(
         .executable(name: "MYTGSMac", targets: ["MYTGSMac"]),
         .executable(name: "MYTGSCoreChecks", targets: ["MYTGSCoreChecks"])
     ],
+    dependencies: [
+        .package(url: "https://github.com/sparkle-project/Sparkle", from: "2.9.3")
+    ],
     targets: [
         .target(
             name: "MYTGSCore",
@@ -21,7 +24,10 @@ let package = Package(
         ),
         .executableTarget(
             name: "MYTGSMac",
-            dependencies: ["MYTGSCore"],
+            dependencies: [
+                "MYTGSCore",
+                .product(name: "Sparkle", package: "Sparkle")
+            ],
             swiftSettings: [
                 .enableUpcomingFeature("StrictConcurrency")
             ]

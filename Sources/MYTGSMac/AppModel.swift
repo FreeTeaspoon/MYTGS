@@ -22,7 +22,6 @@ final class AppModel: ObservableObject {
     @Published var showingLogin = false
     @Published var loginURL: URL?
     @Published var localAPIRunning = false
-    @Published var updateStatus = "Sparkle integration pending Xcode project setup"
 
     private let settingsStore: SettingsPersisting
     private let tokenStore: TokenStore
@@ -180,11 +179,6 @@ final class AppModel: ObservableObject {
         } catch {
             throw RefreshStepError(step: name, underlying: error)
         }
-    }
-
-    func checkForUpdates() {
-        updateStatus = "Updater will be enabled in the signed app bundle"
-        statusMessage = updateStatus
     }
 
     private func restoreSessionIfPossible() async {

@@ -26,8 +26,10 @@
 		600000000000000000000106 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500000000000000000000106 /* SettingsView.swift */; };
 		600000000000000000000107 /* Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500000000000000000000107 /* Views.swift */; };
 		600000000000000000000108 /* WebViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500000000000000000000108 /* WebViews.swift */; };
+		600000000000000000000109 /* UpdateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500000000000000000000109 /* UpdateController.swift */; };
 		600000000000000000000201 /* MYTGSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 500000000000000000000302 /* MYTGSCore.framework */; };
 		600000000000000000000202 /* MYTGSCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 500000000000000000000302 /* MYTGSCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		600000000000000000000203 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 900000000000000000000001 /* Sparkle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,10 +76,17 @@
 		500000000000000000000106 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		500000000000000000000107 /* Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views.swift; sourceTree = "<group>"; };
 		500000000000000000000108 /* WebViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViews.swift; sourceTree = "<group>"; };
+		500000000000000000000109 /* UpdateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateController.swift; sourceTree = "<group>"; };
 		500000000000000000000201 /* MYTGS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MYTGS.entitlements; sourceTree = "<group>"; };
 		500000000000000000000202 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		500000000000000000000203 /* ImplementationNotes.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ImplementationNotes.md; sourceTree = "<group>"; };
 		500000000000000000000204 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		500000000000000000000205 /* MYTGS-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "MYTGS-Debug.xcconfig"; sourceTree = "<group>"; };
+		500000000000000000000206 /* MYTGS-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "MYTGS-Release.xcconfig"; sourceTree = "<group>"; };
+		500000000000000000000207 /* Signing.local.xcconfig.example */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Signing.local.xcconfig.example; sourceTree = "<group>"; };
+		500000000000000000000208 /* Release.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Release.md; sourceTree = "<group>"; };
+		500000000000000000000209 /* MYTGSCore-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "MYTGSCore-Release.xcconfig"; sourceTree = "<group>"; };
+		50000000000000000000020A /* MYTGS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MYTGS-Info.plist"; sourceTree = "<group>"; };
 		500000000000000000000301 /* MYTGS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MYTGS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		500000000000000000000302 /* MYTGSCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MYTGSCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -88,6 +97,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				600000000000000000000201 /* MYTGSCore.framework in Frameworks */,
+				600000000000000000000203 /* Sparkle in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,6 +145,11 @@
 			isa = PBXGroup;
 			children = (
 				500000000000000000000201 /* MYTGS.entitlements */,
+				50000000000000000000020A /* MYTGS-Info.plist */,
+				500000000000000000000205 /* MYTGS-Debug.xcconfig */,
+				500000000000000000000206 /* MYTGS-Release.xcconfig */,
+				500000000000000000000209 /* MYTGSCore-Release.xcconfig */,
+				500000000000000000000207 /* Signing.local.xcconfig.example */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -143,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				500000000000000000000203 /* ImplementationNotes.md */,
+				500000000000000000000208 /* Release.md */,
 			);
 			path = Docs;
 			sourceTree = "<group>";
@@ -176,6 +192,7 @@
 				500000000000000000000106 /* SettingsView.swift */,
 				500000000000000000000107 /* Views.swift */,
 				500000000000000000000108 /* WebViews.swift */,
+				500000000000000000000109 /* UpdateController.swift */,
 			);
 			path = MYTGSMac;
 			sourceTree = "<group>";
@@ -197,6 +214,9 @@
 				700000000000000000000002 /* PBXTargetDependency */,
 			);
 			name = MYTGS;
+			packageProductDependencies = (
+				900000000000000000000001 /* Sparkle */,
+			);
 			productName = MYTGS;
 			productReference = 500000000000000000000301 /* MYTGS.app */;
 			productType = "com.apple.product-type.application";
@@ -246,6 +266,9 @@
 				Base,
 			);
 			mainGroup = 100000000000000000000002;
+			packageReferences = (
+				900000000000000000000002 /* XCRemoteSwiftPackageReference "Sparkle" */,
+			);
 			productRefGroup = 100000000000000000000003 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -269,6 +292,7 @@
 				600000000000000000000106 /* SettingsView.swift in Sources */,
 				600000000000000000000107 /* Views.swift in Sources */,
 				600000000000000000000108 /* WebViews.swift in Sources */,
+				600000000000000000000109 /* UpdateController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,6 +441,7 @@
 		};
 		800000000000000000000003 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 500000000000000000000205 /* MYTGS-Debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CODE_SIGN_ENTITLEMENTS = Config/MYTGS.entitlements;
@@ -426,7 +451,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_HARDENED_RUNTIME = NO;
 				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "Config/MYTGS-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = MYTGS;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -446,18 +472,23 @@
 		};
 		800000000000000000000004 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 500000000000000000000206 /* MYTGS-Release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CODE_SIGN_ENTITLEMENTS = Config/MYTGS.entitlements;
-				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "$(MYTGS_CODE_SIGN_IDENTITY)";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				ENABLE_HARDENED_RUNTIME = NO;
+				DEVELOPMENT_TEAM = "$(MYTGS_DEVELOPMENT_TEAM)";
+				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "Config/MYTGS-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = MYTGS;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				INFOPLIST_KEY_SUFeedURL = "$(MYTGS_SPARKLE_FEED_URL)";
+				INFOPLIST_KEY_SUPublicEDKey = "$(MYTGS_SPARKLE_PUBLIC_ED_KEY)";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -465,6 +496,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 26.0;
 				MARKETING_VERSION = 0.1.0;
 				OTHER_SWIFT_FLAGS = "$(inherited) -enable-upcoming-feature StrictConcurrency";
+				OTHER_CODE_SIGN_FLAGS = "--timestamp";
 				PRODUCT_BUNDLE_IDENTIFIER = com.freeteaspoon.mytgs;
 				PRODUCT_NAME = MYTGS;
 				SDKROOT = macosx;
@@ -497,17 +529,20 @@
 		};
 		800000000000000000000006 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 500000000000000000000209 /* MYTGSCore-Release.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "$(MYTGS_CODE_SIGN_IDENTITY)";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "$(MYTGS_DEVELOPMENT_TEAM)";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INSTALL_PATH = "@rpath";
 				MACOSX_DEPLOYMENT_TARGET = 26.0;
 				MARKETING_VERSION = 0.1.0;
+				OTHER_CODE_SIGN_FLAGS = "--timestamp";
 				OTHER_SWIFT_FLAGS = "$(inherited) -enable-upcoming-feature StrictConcurrency";
 				PRODUCT_BUNDLE_IDENTIFIER = com.freeteaspoon.mytgs.core;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -548,6 +583,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		900000000000000000000002 /* XCRemoteSwiftPackageReference "Sparkle" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sparkle-project/Sparkle";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.9.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		900000000000000000000001 /* Sparkle */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 900000000000000000000002 /* XCRemoteSwiftPackageReference "Sparkle" */;
+			productName = Sparkle;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 100000000000000000000001 /* Project object */;
 }

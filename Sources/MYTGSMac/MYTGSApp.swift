@@ -6,6 +6,7 @@ struct MYTGSApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
     @StateObject private var model = AppModel()
     @StateObject private var clockPanel = FloatingClockPanelController()
+    @StateObject private var updates = UpdateController()
 
     var body: some Scene {
         WindowGroup("MYTGS") {
@@ -27,7 +28,7 @@ struct MYTGSApp: App {
         .commands {
             CommandGroup(after: .appInfo) {
                 Button("Check for Updates...") {
-                    model.checkForUpdates()
+                    checkForUpdates()
                 }
             }
             SidebarCommands()
@@ -47,7 +48,7 @@ struct MYTGSApp: App {
                 Task { await model.refreshAll() }
             }
             Button("Check for Updates...") {
-                model.checkForUpdates()
+                checkForUpdates()
             }
             Divider()
             Button("Quit MYTGS") {
@@ -58,7 +59,13 @@ struct MYTGSApp: App {
         Settings {
             SettingsView()
                 .environmentObject(model)
+                .environmentObject(updates)
         }
+    }
+
+    private func checkForUpdates() {
+        updates.checkForUpdates()
+        model.statusMessage = updates.statusMessage
     }
 }
 

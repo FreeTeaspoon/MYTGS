@@ -3,6 +3,7 @@ import MYTGSCore
 
 struct SettingsView: View {
     @EnvironmentObject private var model: AppModel
+    @EnvironmentObject private var updates: UpdateController
 
     var body: some View {
         TabView {
@@ -31,8 +32,12 @@ struct SettingsView: View {
                 Text("Yes").tag(Optional(true))
                 Text("No").tag(Optional(false))
             }
-            Text(model.updateStatus)
+            Text(updates.statusMessage)
                 .foregroundStyle(.secondary)
+            Button("Check for Updates") {
+                updates.checkForUpdates()
+                model.statusMessage = updates.statusMessage
+            }
             Button("Save") {
                 model.persistSettings()
             }
