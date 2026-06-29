@@ -1,6 +1,6 @@
 # MYTGS Native macOS Port
 
-This folder contains the native macOS 26 port scaffold for MYTGS.
+This repository contains the native macOS 26 port scaffold for MYTGS.
 
 ## Shape
 
@@ -10,7 +10,7 @@ This folder contains the native macOS 26 port scaffold for MYTGS.
 
 ## Xcode
 
-This is implemented as a Swift package that Xcode 26 can open directly. Sparkle should be added when the package is promoted into a signed `.xcodeproj` app bundle; keeping the package dependency out of this scaffold avoids Xcode package-graph failures while running the app from `Package.swift`.
+This is implemented as a root-level Swift package that Xcode 26 can open directly. Sparkle should be added when the package is promoted into a signed `.xcodeproj` app bundle; keeping the package dependency out of this scaffold avoids Xcode package-graph failures while running the app from `Package.swift`.
 
 ## Remaining Production Work
 

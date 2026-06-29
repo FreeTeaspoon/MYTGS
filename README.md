@@ -1,30 +1,33 @@
-# MYTGS - Download Here
-This is a simple desktop application designed for TGS student.
-It is made to be a step up from my [original project](https://github.com/Torca2001/timetable-clock). 
-It integrates with Firefly Education's Api to display user's tasks 
-and performing caching of these. 
-It will also have an inbuilt version of the timetable clock.
-To install [Download](https://downloads.torca.xyz/mytgs/MYTGS.application) this.
+# MYTGS for macOS
 
+Native macOS 26 port of MYTGS, built with SwiftUI, AppKit, WebKit, and Swift Package Manager.
 
-## Firefly compatiblity 
-The program is able to connect to the Firefly system and login using SSO.
-This allows it to automatically retrieve relevant information such as Tasks
-and planner information.
+## Status
 
+This repository is now macOS-only. The original Windows WPF source has been removed from this fork so the Swift package lives at the repository root.
 
-## EPR processing
-For Trinity the epr follows a set format which can be parsed using regex.
-This allows for the program to compare the EPR with the student's current timetable
+Implemented scaffold:
 
+- Firefly school lookup, SSO login, token validation, dashboard fetch, task fetch, timetable events, profile image fetch, EPR fetch, and logout calls.
+- Keychain token storage, SwiftData task cache, local settings persistence, EPR parsing, timetable processing, task search, and local HTTP API shape.
+- SwiftUI/AppKit app shell with native sidebar navigation, settings, WebKit login, menu bar item, notifications, and floating clock panel.
 
-## Timetable Clock
-Similar to the [predecessor](https://github.com/Torca2001/timetable-clock) 
-It will count down the time for the current period taking in account different days,
-early finishes and different semesters.
+## Open In Xcode
 
+Open this repository folder, or open `Package.swift` directly in Xcode 26.
 
-## Early finishes
-This is not a perfect system as it relys on an outlook Calendar from Mr Ryder which can be susceptible
-to human error and thus sometimes the program can get this wrong.
-This is easily resolved by going to settings and overriding the early finish for the day.
+Run the `MYTGSMac` scheme.
+
+## Command Line
+
+```sh
+swift build --product MYTGSMac
+swift run MYTGSCoreChecks
+```
+
+## Remaining Production Work
+
+- Promote the Swift package into a signed app bundle or Xcode project for distribution.
+- Configure Apple Developer signing, hardened runtime, notarization, and direct updates.
+- Add sanitized Firefly fixtures for broader tests.
+- Finish polishing macOS 26-specific UI behavior once the app bundle is in place.
