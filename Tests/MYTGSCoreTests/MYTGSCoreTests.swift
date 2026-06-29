@@ -15,8 +15,11 @@ final class MYTGSCoreTests: XCTestCase {
         let school = try await client.lookupSchool()
         XCTAssertEqual(school.name, "MYTGS Synthetic School")
         XCTAssertEqual(school.url.absoluteString, "https://mytgs.firefly.test")
+        let lookupURL = try XCTUnwrap(router.request(path: "/appgateway/school/MYTGS")?.url)
+        XCTAssertEqual(lookupURL.scheme, "http")
 
         let loginURL = await client.loginURL(for: school)
+        XCTAssertEqual(loginURL.scheme, "https")
         XCTAssertEqual(loginURL.path, "/login/api/loginui")
         XCTAssertEqual(queryItem("app_id", in: loginURL), "android_tasks")
         XCTAssertEqual(queryItem("device_id", in: loginURL), "TT-TEST-DEVICE")
@@ -86,6 +89,26 @@ final class MYTGSCoreTests: XCTestCase {
         } catch let error as FireflyClientError {
             XCTAssertEqual(error, .badResponse(503))
         }
+    }
+
+    func testInfoPlistAllowsOnlyFireflyGatewayInsecureHTTP() throws {
+        var repoRoot = URL(fileURLWithPath: #filePath)
+        repoRoot.deleteLastPathComponent()
+        repoRoot.deleteLastPathComponent()
+        repoRoot.deleteLastPathComponent()
+
+        let plistURL = repoRoot.appending(path: "Config/MYTGS-Info.plist")
+        let data = try Data(contentsOf: plistURL)
+        let object = try PropertyListSerialization.propertyList(from: data, format: nil)
+        let plist = try XCTUnwrap(object as? [String: Any])
+        let ats = try XCTUnwrap(plist["NSAppTransportSecurity"] as? [String: Any])
+        XCTAssertNil(ats["NSAllowsArbitraryLoads"])
+
+        let domains = try XCTUnwrap(ats["NSExceptionDomains"] as? [String: Any])
+        XCTAssertEqual(Set(domains.keys), ["appgateway.ffhost.co.uk"])
+
+        let gateway = try XCTUnwrap(domains["appgateway.ffhost.co.uk"] as? [String: Any])
+        XCTAssertEqual(gateway["NSExceptionAllowsInsecureHTTPLoads"] as? Bool, true)
     }
 
     func testEPRParserWithFixture() throws {
