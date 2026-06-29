@@ -7,9 +7,9 @@ APP_PATH="${APP_PATH:-$ROOT_DIR/build/unsigned/Build/Products/Release/MYTGS.app}
 DIST_DIR="$ROOT_DIR/dist"
 WORK_DIR="$ROOT_DIR/build/dmg"
 VOLNAME="MYTGS ${VERSION}"
-RW_IMAGE="$WORK_DIR/MYTGS-${VERSION}.sparseimage"
-DMG_PATH="$DIST_DIR/MYTGS-${VERSION}.dmg"
-MOUNT_DIR="$WORK_DIR/mount"
+RW_IMAGE="$WORK_DIR/MYTGS-${VERSION}.rw.dmg"
+DMG_PATH="$DIST_DIR/MYTGS-${VERSION}-installer.dmg"
+MOUNT_DIR=""
 BACKGROUND_PATH="$WORK_DIR/background.png"
 
 fail() {
@@ -23,7 +23,7 @@ command -v osascript >/dev/null || fail "osascript is required."
 command -v swift >/dev/null || fail "swift is required."
 
 rm -rf "$WORK_DIR"
-mkdir -p "$WORK_DIR" "$DIST_DIR" "$MOUNT_DIR"
+mkdir -p "$WORK_DIR" "$DIST_DIR"
 
 swift - "$BACKGROUND_PATH" <<'SWIFT'
 import AppKit
@@ -53,12 +53,12 @@ NSColor(calibratedWhite: 0.985, alpha: 1).setFill()
 rect.fill()
 
 let gradient = NSGradient(colors: [
-    NSColor(calibratedRed: 0.94, green: 0.97, blue: 1.0, alpha: 1),
-    NSColor.white
+    NSColor(calibratedRed: 0.91, green: 0.96, blue: 1.0, alpha: 1),
+    NSColor(calibratedRed: 1.0, green: 1.0, blue: 1.0, alpha: 1)
 ])!
 gradient.draw(in: rect, angle: -18)
 
-let topBand = NSBezierPath(roundedRect: NSRect(x: 34, y: 326, width: 652, height: 76), xRadius: 18, yRadius: 18)
+let topBand = NSBezierPath(roundedRect: NSRect(x: 34, y: 326, width: 652, height: 76), xRadius: 20, yRadius: 20)
 NSColor.white.withAlphaComponent(0.72).setFill()
 topBand.fill()
 NSColor.black.withAlphaComponent(0.08).setStroke()
@@ -91,7 +91,7 @@ subtitle.draw(
 let arrow = NSBezierPath()
 arrow.move(to: NSPoint(x: 294, y: 218))
 arrow.line(to: NSPoint(x: 426, y: 218))
-arrow.lineWidth = 8
+arrow.lineWidth = 10
 arrow.lineCapStyle = .round
 NSColor.controlAccentColor.withAlphaComponent(0.88).setStroke()
 arrow.stroke()
@@ -101,7 +101,7 @@ head.move(to: NSPoint(x: 426, y: 218))
 head.line(to: NSPoint(x: 398, y: 238))
 head.move(to: NSPoint(x: 426, y: 218))
 head.line(to: NSPoint(x: 398, y: 198))
-head.lineWidth = 8
+head.lineWidth = 10
 head.lineCapStyle = .round
 NSColor.controlAccentColor.withAlphaComponent(0.88).setStroke()
 head.stroke()
@@ -131,15 +131,16 @@ SWIFT
 
 hdiutil create \
     -size 96m \
-    -fs APFS \
+    -fs HFS+ \
     -volname "$VOLNAME" \
-    -type SPARSE \
     -ov \
     "$RW_IMAGE" >/dev/null
 
-hdiutil attach "$RW_IMAGE" -mountpoint "$MOUNT_DIR" -nobrowse -quiet
+ATTACH_OUTPUT="$(hdiutil attach "$RW_IMAGE" -nobrowse)"
+MOUNT_DIR="$(printf '%s\n' "$ATTACH_OUTPUT" | awk -F'\t' '/\/Volumes\// {print $NF; exit}')"
+[[ -n "$MOUNT_DIR" && -d "$MOUNT_DIR" ]] || fail "Unable to mount temporary DMG."
 cleanup() {
-    if mount | grep -q "$MOUNT_DIR"; then
+    if [[ -n "${MOUNT_DIR:-}" ]] && mount | grep -q "$MOUNT_DIR"; then
         hdiutil detach "$MOUNT_DIR" -quiet || true
     fi
 }
@@ -152,20 +153,22 @@ cp "$BACKGROUND_PATH" "$MOUNT_DIR/.background/background.png"
 
 osascript <<APPLESCRIPT &
 tell application "Finder"
-    set dmgFolder to POSIX file "$MOUNT_DIR" as alias
-    open dmgFolder
-    set current view of container window of dmgFolder to icon view
-    set toolbar visible of container window of dmgFolder to false
-    set statusbar visible of container window of dmgFolder to false
-    set bounds of container window of dmgFolder to {120, 120, 840, 560}
-    set viewOptions to icon view options of container window of dmgFolder
+    tell disk "$VOLNAME"
+    open
+    set current view of container window to icon view
+    set toolbar visible of container window to false
+    set statusbar visible of container window to false
+    set bounds of container window to {120, 120, 840, 560}
+    set viewOptions to icon view options of container window
     set arrangement of viewOptions to not arranged
     set icon size of viewOptions to 104
-    set background picture of viewOptions to POSIX file "$MOUNT_DIR/.background/background.png"
-    set position of item "MYTGS.app" of dmgFolder to {180, 224}
-    set position of item "Applications" of dmgFolder to {540, 224}
-    update dmgFolder without registering applications
+    set background picture of viewOptions to file ".background:background.png"
+    set position of item "MYTGS.app" of container window to {180, 224}
+    set position of item "Applications" of container window to {540, 224}
+    update without registering applications
     delay 1
+    close
+    end tell
 end tell
 APPLESCRIPT
 OSA_PID=$!

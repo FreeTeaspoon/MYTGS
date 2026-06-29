@@ -42,7 +42,7 @@ xcodebuild -project MYTGS.xcodeproj -scheme MYTGS -configuration Release -destin
 Scripts/package-unsigned-dmg.sh 0.1.0-alpha.1
 ```
 
-This creates `dist/MYTGS-0.1.0-alpha.1.dmg` with `MYTGS.app`, an Applications shortcut, and a Finder background. Upload this only as a prerelease and clearly note that macOS will show an unidentified developer warning.
+This creates `dist/MYTGS-0.1.0-alpha.1-installer.dmg` with `MYTGS.app`, an Applications shortcut, and a Finder background. Upload this only as a prerelease and clearly note that macOS will show an unidentified developer warning.
 
 ## Sparkle Appcast
 
