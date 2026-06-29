@@ -12,8 +12,11 @@ This repository contains the native macOS 26 port scaffold for MYTGS.
 
 This is implemented as a root-level Swift package plus `MYTGS.xcodeproj`. Open the project to run the real `MYTGS.app` bundle; keep using `Package.swift` for command-line builds and core checks.
 
+## Tests
+
+`swift test` runs offline synthetic Firefly fixture tests under `Tests/MYTGSCoreTests`. The fixtures are fake and sanitized by design; live Firefly captures should only be added after manual redaction.
+
 ## Remaining Production Work
 
 - Install local Apple Developer credentials, generate the Sparkle EdDSA key, and run the prepared release script.
-- Add sanitized live Firefly fixtures for every endpoint.
 - Decide whether `com.freeteaspoon.mytgs` needs an Apple Developer team-specific prefix before public distribution.

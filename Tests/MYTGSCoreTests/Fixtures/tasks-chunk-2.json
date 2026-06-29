@@ -1,0 +1,37 @@
+[
+  {
+    "descriptionDetails": {
+      "descriptionPageId": 7002,
+      "htmlContent": "<p>Draft a synthetic English paragraph.</p>",
+      "containsQuestions": false,
+      "isSimpleDescription": true
+    },
+    "hideFromRecipients": false,
+    "title": "English Paragraph",
+    "setDate": "2026-06-25T08:00:00Z",
+    "dueDate": "2026-07-02T23:59:00Z",
+    "LatestestActivity": "2026-06-25T08:00:00Z",
+    "ClassKeys": [],
+    "setter": {
+      "guid": "teacher-guid-0002",
+      "name": "Dr Words",
+      "sort_key": "Words, Dr"
+    },
+    "addressees": [
+      {
+        "principal": {
+          "guid": "class-guid-122eng1",
+          "name": "Class 122ENG1"
+        },
+        "isGroup": true
+      }
+    ],
+    "recipientsResponses": [],
+    "deleted": false,
+    "archived": false,
+    "draft": false,
+    "totalMarkOutOf": 0,
+    "mark": 0,
+    "id": 1051
+  }
+]

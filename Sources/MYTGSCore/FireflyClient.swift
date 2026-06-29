@@ -164,7 +164,8 @@ public actor FireflyClient {
             ])
         let (data, response) = try await self.session.data(from: url)
         try validate(response)
-        return String(data: data, encoding: .utf8) == "OK"
+        return String(data: data, encoding: .utf8)?
+            .trimmingCharacters(in: .whitespacesAndNewlines) == "OK"
     }
 
     private func fetchTaskChunk(session: FireflySession, ids: [Int]) async throws -> [FireflyTask] {

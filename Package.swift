@@ -38,6 +38,16 @@ let package = Package(
             swiftSettings: [
                 .enableUpcomingFeature("StrictConcurrency")
             ]
+        ),
+        .testTarget(
+            name: "MYTGSCoreTests",
+            dependencies: ["MYTGSCore"],
+            resources: [
+                .process("Fixtures")
+            ],
+            swiftSettings: [
+                .enableUpcomingFeature("StrictConcurrency")
+            ]
         )
     ]
 )

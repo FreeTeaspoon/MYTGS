@@ -1,0 +1,32 @@
+{
+  "data": {
+    "events": [
+      {
+        "guid": "122MM4-A-2-29-6-2026",
+        "description": "Synthetic maths period",
+        "start": "2026-06-29T09:45:00Z",
+        "end": "2026-06-29T10:35:00Z",
+        "location": "B7",
+        "subject": "Maths",
+        "attendees": [
+          {
+            "principal": {
+              "guid": "teacher-guid-0001",
+              "name": "Ms Synthetic",
+              "sort_key": "Synthetic, Ms"
+            },
+            "role": "Chairperson"
+          },
+          {
+            "principal": {
+              "guid": "student-guid-0001",
+              "name": "Sample Student",
+              "sort_key": "Student, Sample"
+            },
+            "role": "Attendee"
+          }
+        ]
+      }
+    ]
+  }
+}

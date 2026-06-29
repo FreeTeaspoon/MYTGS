@@ -23,9 +23,12 @@ Run the `MYTGS` scheme to launch the app as a real `MYTGS.app` bundle.
 The Swift package remains available for command-line development and core checks:
 
 ```sh
+swift test
 swift build --product MYTGSMac
 swift run MYTGSCoreChecks
 ```
+
+`swift test` runs the offline fixture test suite. `MYTGSCoreChecks` remains a quick smoke check.
 
 ## Release Prep
 
@@ -39,5 +42,4 @@ The Sparkle feed is prepared for `https://freeteaspoon.github.io/MYTGS-MAC/appca
 
 ## Remaining Production Work
 
-- Add sanitized Firefly fixtures for broader tests.
 - Finish polishing macOS 26-specific UI behavior once the app bundle is in place.

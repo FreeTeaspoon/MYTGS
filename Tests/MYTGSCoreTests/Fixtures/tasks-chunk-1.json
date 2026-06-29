@@ -1,0 +1,64 @@
+[
+  {
+    "descriptionDetails": {
+      "descriptionPageId": 7001,
+      "htmlContent": "<p>Complete the synthetic maths investigation.</p>",
+      "containsQuestions": false,
+      "isSimpleDescription": true
+    },
+    "hideFromRecipients": false,
+    "title": "  Maths Investigation  ",
+    "setDate": "2026-06-24T08:00:00Z",
+    "dueDate": "2026-07-01T23:59:00Z",
+    "LatestestActivity": "2026-06-24T08:00:00Z",
+    "ClassKeys": [],
+    "setter": {
+      "guid": "teacher-guid-0001",
+      "name": "Ms Synthetic",
+      "sort_key": "Synthetic, Ms"
+    },
+    "addressees": [
+      {
+        "principal": {
+          "guid": "class-guid-122mm4",
+          "name": "Class 122MM4"
+        },
+        "isGroup": true
+      }
+    ],
+    "recipientsResponses": [
+      {
+        "principal": {
+          "guid": "student-guid-0001",
+          "name": "Sample Student"
+        },
+        "responses": [
+          {
+            "mark": 8,
+            "outOf": 10,
+            "createdTimestamp": "2026-06-28T09:00:00Z",
+            "sentTimestamp": "2026-06-28T09:00:00Z",
+            "eventGuid": "response-guid-duplicate"
+          },
+          {
+            "mark": 9,
+            "taskAssessmentDetails": {
+              "assessmentMarkMax": 12,
+              "assessmentDetailsId": 5001,
+              "assessmentType": 1
+            },
+            "createdTimestamp": "2026-06-28T10:30:00Z",
+            "sentTimestamp": "2026-06-28T10:30:00Z",
+            "eventGuid": "response-guid-duplicate"
+          }
+        ]
+      }
+    ],
+    "deleted": false,
+    "archived": false,
+    "draft": false,
+    "totalMarkOutOf": 0,
+    "mark": 0,
+    "id": 1001
+  }
+]
