@@ -225,12 +225,12 @@ final class MYTGSCoreTests: XCTestCase {
 
     func testFixturesStaySyntheticAndSafeToCommit() throws {
         let unsafeFragments = [
-            "Sample",
-            "Student",
-            "school.example",
+            "REAL_STUDENT_NAME",
+            "REAL_STUDENT_SURNAME",
+            "real.school.example",
             "fireflycloud.net",
-            "@school",
-            "000000"
+            "@real-school.example",
+            "REAL_STUDENT_ID"
         ]
         for fixture in Fixture.allFixtureNames {
             let text = String(data: Fixture.data(fixture.name, fixture.ext), encoding: .utf8) ?? ""
