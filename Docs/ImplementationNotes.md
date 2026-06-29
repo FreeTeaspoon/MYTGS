@@ -5,7 +5,7 @@ This repository contains the native macOS 26 port scaffold for MYTGS.
 ## Shape
 
 - `Sources/MYTGSCore`: Firefly models, API client, EPR parser, timetable engine, SwiftData cache, Keychain token storage, settings, task search, and the local HTTP API.
-- `Sources/MYTGSMac`: SwiftUI/AppKit app shell with native sidebar navigation, settings, WebKit SSO, menu bar item, notifications, and floating clock panel.
+- `Sources/MYTGSMac`: SwiftUI/AppKit app shell with native sidebar navigation, macOS 26 Liquid Glass surfaces, settings, WebKit SSO, menu bar item, notifications, and floating clock panel.
 - `Tests/MYTGSCoreTests`: fixture-based tests for the highest-risk behavior translations.
 
 ## Xcode

@@ -35,6 +35,11 @@ struct MYTGSApp: App {
         }
 
         MenuBarExtra("MYTGS", systemImage: "calendar.badge.clock") {
+            Text(model.session == nil ? "Signed out" : model.statusMessage)
+            if let lastUpdated = model.lastUpdated {
+                Text("Updated \(lastUpdated.formatted(date: .omitted, time: .shortened))")
+            }
+            Divider()
             Button("Show MYTGS") {
                 NSApp.activate(ignoringOtherApps: true)
             }
@@ -44,9 +49,10 @@ struct MYTGSApp: App {
                 clockPanel.update(schedule: model.todaySchedule, settings: model.settings.clock)
             }
             Divider()
-            Button("Refresh") {
+            Button(model.isRefreshing ? "Refreshing..." : "Refresh") {
                 Task { await model.refreshAll() }
             }
+            .disabled(model.isRefreshing || model.session == nil)
             Button("Check for Updates...") {
                 checkForUpdates()
             }

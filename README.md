@@ -6,11 +6,11 @@ Native macOS 26 port of MYTGS, built with SwiftUI, AppKit, WebKit, and Swift Pac
 
 This repository is now macOS-only. The original Windows WPF source has been removed from this fork so the Swift package lives at the repository root.
 
-Implemented scaffold:
+Implemented app foundation:
 
 - Firefly school lookup, SSO login, token validation, dashboard fetch, task fetch, timetable events, profile image fetch, EPR fetch, and logout calls.
 - Keychain token storage, SwiftData task cache, local settings persistence, EPR parsing, timetable processing, task search, and local HTTP API shape.
-- SwiftUI/AppKit app shell with native sidebar navigation, settings, WebKit login, menu bar item, notifications, and floating clock panel.
+- SwiftUI/AppKit app shell with native sidebar navigation, Liquid Glass-styled dashboard/task/timetable/EPR surfaces, settings, WebKit login, menu bar item, notifications, and floating clock panel.
 
 ## Open In Xcode
 
@@ -42,4 +42,5 @@ The Sparkle feed is prepared for `https://freeteaspoon.github.io/MYTGS-MAC/appca
 
 ## Remaining Production Work
 
-- Finish polishing macOS 26-specific UI behavior once the app bundle is in place.
+- Install local Apple Developer credentials, generate the Sparkle EdDSA key, and run the prepared release script.
+- Decide whether `com.freeteaspoon.mytgs` needs an Apple Developer team-specific prefix before public distribution.

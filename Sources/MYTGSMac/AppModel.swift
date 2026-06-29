@@ -22,6 +22,8 @@ final class AppModel: ObservableObject {
     @Published var showingLogin = false
     @Published var loginURL: URL?
     @Published var localAPIRunning = false
+    @Published var isRefreshing = false
+    @Published var lastUpdated: Date?
 
     private let settingsStore: SettingsPersisting
     private let tokenStore: TokenStore
@@ -75,10 +77,14 @@ final class AppModel: ObservableObject {
     }
 
     func persistSettings() {
+        let previousStatus = statusMessage
         settingsStore.save(settings)
         applyLaunchAtLogin()
         configureLocalAPI()
         updateLocalAPISnapshot()
+        if statusMessage == previousStatus || statusMessage == "Ready" {
+            statusMessage = "Settings saved \(Date().formatted(date: .omitted, time: .shortened))"
+        }
     }
 
     func beginLogin() {
@@ -133,6 +139,11 @@ final class AppModel: ObservableObject {
             statusMessage = "Sign in to refresh MYTGS"
             return
         }
+        guard !isRefreshing else { return }
+
+        isRefreshing = true
+        defer { isRefreshing = false }
+
         do {
             statusMessage = "Refreshing..."
             let start = Calendar.current.date(byAdding: .day, value: -7, to: Date()) ?? Date()
@@ -155,6 +166,9 @@ final class AppModel: ObservableObject {
                 try await firefly.fetchTasks(session: session, ids: ids)
             }
             tasks = fetchedTasks
+            if selectedTask.map({ selected in fetchedTasks.contains { $0.id == selected.id } }) != true {
+                selectedTask = fetchedTasks.first
+            }
             try? cache?.saveTasks(fetchedTasks)
 
             let early = CalendarService.isEarlyFinishToday(events: [], override: settings.todayEarlyFinishOverride)
@@ -166,10 +180,24 @@ final class AppModel: ObservableObject {
             if settings.bell.enabled {
                 bellPlayer.prepare(volume: settings.bell.volume)
             }
-            statusMessage = "Updated \(Date().formatted(date: .omitted, time: .shortened))"
+            lastUpdated = Date()
+            statusMessage = "Updated \(lastUpdated?.formatted(date: .omitted, time: .shortened) ?? "")"
         } catch {
             statusMessage = "Refresh failed: \(error.localizedDescription)"
         }
+    }
+
+    func currentPeriod(at date: Date = Date()) -> TimetablePeriod? {
+        todaySchedule.first { $0.start <= date && $0.end >= date }
+    }
+
+    func nextPeriod(after date: Date = Date()) -> TimetablePeriod? {
+        todaySchedule.first { $0.start > date }
+    }
+
+    func playBellPreview() {
+        bellPlayer.prepare(volume: settings.bell.volume)
+        bellPlayer.playTestBell()
     }
 
     private func refreshStep<T>(_ name: String, operation: () async throws -> T) async throws -> T {
