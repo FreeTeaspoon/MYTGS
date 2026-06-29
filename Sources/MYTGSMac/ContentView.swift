@@ -48,11 +48,27 @@ struct ContentView: View {
 
     private var sidebar: some View {
         VStack(spacing: 0) {
-            List(AppSection.allCases, selection: $selection) { section in
-                Label(section.rawValue, systemImage: section.symbol)
-                    .tag(section)
+            ScrollView {
+                VStack(alignment: .leading, spacing: 4) {
+                    ForEach(AppSection.allCases) { section in
+                        Button {
+                            selection = section
+                        } label: {
+                            Label(section.rawValue, systemImage: section.symbol)
+                                .font(.body.weight(selection == section ? .semibold : .regular))
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .padding(.horizontal, 12)
+                                .padding(.vertical, 8)
+                                .background(selection == section ? Color.accentColor : Color.clear, in: RoundedRectangle(cornerRadius: 7, style: .continuous))
+                                .foregroundStyle(selection == section ? Color.white : Color.primary)
+                        }
+                        .buttonStyle(.plain)
+                        .accessibilityIdentifier("sidebar-\(section.rawValue)")
+                    }
+                }
+                .padding(.horizontal, 10)
+                .padding(.vertical, 12)
             }
-            .listStyle(.sidebar)
 
             SidebarStatusFooter()
                 .environmentObject(model)

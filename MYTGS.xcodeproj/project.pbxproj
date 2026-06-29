@@ -30,6 +30,8 @@
 		600000000000000000000201 /* MYTGSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 500000000000000000000302 /* MYTGSCore.framework */; };
 		600000000000000000000202 /* MYTGSCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 500000000000000000000302 /* MYTGSCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		600000000000000000000203 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 900000000000000000000001 /* Sparkle */; };
+		600000000000000000000301 /* AppIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 500000000000000000000401 /* AppIcon.icns */; };
+		600000000000000000000401 /* MYTGSMacUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500000000000000000000501 /* MYTGSMacUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +41,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 200000000000000000000002;
 			remoteInfo = MYTGSCore;
+		};
+		700000000000000000000003 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 100000000000000000000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 200000000000000000000001;
+			remoteInfo = MYTGS;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -89,6 +98,9 @@
 		50000000000000000000020A /* MYTGS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MYTGS-Info.plist"; sourceTree = "<group>"; };
 		500000000000000000000301 /* MYTGS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MYTGS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		500000000000000000000302 /* MYTGSCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MYTGSCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		500000000000000000000401 /* AppIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = AppIcon.icns; sourceTree = "<group>"; };
+		500000000000000000000501 /* MYTGSMacUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MYTGSMacUITests.swift; sourceTree = "<group>"; };
+		500000000000000000000502 /* MYTGSMacUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MYTGSMacUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +120,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		300000000000000000000007 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -117,7 +136,9 @@
 				500000000000000000000204 /* Package.swift */,
 				100000000000000000000004 /* Sources */,
 				100000000000000000000005 /* Config */,
+				100000000000000000000009 /* Resources */,
 				100000000000000000000006 /* Docs */,
+				10000000000000000000000A /* Tests */,
 				500000000000000000000202 /* README.md */,
 				100000000000000000000003 /* Products */,
 			);
@@ -128,6 +149,7 @@
 			children = (
 				500000000000000000000301 /* MYTGS.app */,
 				500000000000000000000302 /* MYTGSCore.framework */,
+				500000000000000000000502 /* MYTGSMacUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -154,6 +176,14 @@
 			path = Config;
 			sourceTree = "<group>";
 		};
+		100000000000000000000009 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				500000000000000000000401 /* AppIcon.icns */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		100000000000000000000006 /* Docs */ = {
 			isa = PBXGroup;
 			children = (
@@ -161,6 +191,22 @@
 				500000000000000000000208 /* Release.md */,
 			);
 			path = Docs;
+			sourceTree = "<group>";
+		};
+		10000000000000000000000A /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				10000000000000000000000B /* MYTGSMacUITests */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		10000000000000000000000B /* MYTGSMacUITests */ = {
+			isa = PBXGroup;
+			children = (
+				500000000000000000000501 /* MYTGSMacUITests.swift */,
+			);
+			path = MYTGSMacUITests;
 			sourceTree = "<group>";
 		};
 		100000000000000000000007 /* MYTGSCore */ = {
@@ -205,6 +251,7 @@
 			buildConfigurationList = 400000000000000000000002 /* Build configuration list for PBXNativeTarget "MYTGS" */;
 			buildPhases = (
 				300000000000000000000001 /* Sources */,
+				300000000000000000000006 /* Resources */,
 				300000000000000000000002 /* Frameworks */,
 				300000000000000000000003 /* Embed Frameworks */,
 			);
@@ -237,6 +284,23 @@
 			productReference = 500000000000000000000302 /* MYTGSCore.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		200000000000000000000003 /* MYTGSMacUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 400000000000000000000004 /* Build configuration list for PBXNativeTarget "MYTGSMacUITests" */;
+			buildPhases = (
+				300000000000000000000008 /* Sources */,
+				300000000000000000000007 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				700000000000000000000004 /* PBXTargetDependency */,
+			);
+			name = MYTGSMacUITests;
+			productName = MYTGSMacUITests;
+			productReference = 500000000000000000000502 /* MYTGSMacUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -254,6 +318,11 @@
 					200000000000000000000002 = {
 						CreatedOnToolsVersion = 26.0;
 						ProvisioningStyle = Automatic;
+					};
+					200000000000000000000003 = {
+						CreatedOnToolsVersion = 26.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 200000000000000000000001;
 					};
 				};
 			};
@@ -275,9 +344,21 @@
 			targets = (
 				200000000000000000000001 /* MYTGS */,
 				200000000000000000000002 /* MYTGSCore */,
+				200000000000000000000003 /* MYTGSMacUITests */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		300000000000000000000006 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				600000000000000000000301 /* AppIcon.icns in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		300000000000000000000001 /* Sources */ = {
@@ -293,6 +374,14 @@
 				600000000000000000000107 /* Views.swift in Sources */,
 				600000000000000000000108 /* WebViews.swift in Sources */,
 				600000000000000000000109 /* UpdateController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		300000000000000000000008 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				600000000000000000000401 /* MYTGSMacUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,6 +410,11 @@
 			isa = PBXTargetDependency;
 			target = 200000000000000000000002 /* MYTGSCore */;
 			targetProxy = 700000000000000000000001 /* PBXContainerItemProxy */;
+		};
+		700000000000000000000004 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 200000000000000000000001 /* MYTGS */;
+			targetProxy = 700000000000000000000003 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -552,6 +646,46 @@
 			};
 			name = Release;
 		};
+		800000000000000000000007 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.freeteaspoon.mytgs.uitests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 6.0;
+				TEST_TARGET_NAME = MYTGS;
+			};
+			name = Debug;
+		};
+		800000000000000000000008 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.freeteaspoon.mytgs.uitests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 6.0;
+				TEST_TARGET_NAME = MYTGS;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -578,6 +712,15 @@
 			buildConfigurations = (
 				800000000000000000000005 /* Debug */,
 				800000000000000000000006 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		400000000000000000000004 /* Build configuration list for PBXNativeTarget "MYTGSMacUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				800000000000000000000007 /* Debug */,
+				800000000000000000000008 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

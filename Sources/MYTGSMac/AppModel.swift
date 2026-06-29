@@ -70,6 +70,7 @@ final class AppModel: ObservableObject {
     }
 
     func bootstrap() {
+        guard !isUITesting else { return }
         requestNotifications()
         applyLaunchAtLogin()
         configureLocalAPI()
@@ -280,6 +281,10 @@ final class AppModel: ObservableObject {
     private var isRunningFromAppBundle: Bool {
         Bundle.main.bundleURL.pathExtension == "app"
             || (Bundle.main.infoDictionary?["CFBundlePackageType"] as? String) == "APPL"
+    }
+
+    private var isUITesting: Bool {
+        ProcessInfo.processInfo.arguments.contains("--uitesting")
     }
 
     private static func makeTwoWeekTimetable(reference: Date, events: [FireflyEvent] = [], earlyFinish: Bool = false) -> [[TimetablePeriod]] {

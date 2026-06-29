@@ -64,6 +64,7 @@ struct DashboardView: View {
             }
         }
         .navigationTitle("Dashboard")
+        .accessibilityIdentifier("screen-Dashboard")
     }
 }
 
@@ -97,6 +98,7 @@ struct TasksView: View {
                 .frame(minWidth: 440)
         }
         .navigationTitle("Tasks")
+        .accessibilityIdentifier("screen-Tasks")
         .toolbar {
             ToolbarItemGroup {
                 Picker("Sort", selection: $model.taskCriteria.order) {
@@ -232,6 +234,7 @@ struct TimetableView: View {
             .frame(maxWidth: 1180, alignment: .leading)
         }
         .navigationTitle("Timetable")
+        .accessibilityIdentifier("screen-Timetable")
     }
 }
 
@@ -295,6 +298,7 @@ struct EPRView: View {
             .frame(maxWidth: 980, alignment: .leading)
         }
         .navigationTitle("EPR")
+        .accessibilityIdentifier("screen-EPR")
     }
 }
 
@@ -350,6 +354,7 @@ struct AccountView: View {
             .frame(maxWidth: 760, alignment: .leading)
         }
         .navigationTitle("Account")
+        .accessibilityIdentifier("screen-Account")
     }
 }
 

@@ -11,6 +11,7 @@ Implemented app foundation:
 - Firefly school lookup, SSO login, token validation, dashboard fetch, task fetch, timetable events, profile image fetch, EPR fetch, and logout calls.
 - Keychain token storage, SwiftData task cache, local settings persistence, EPR parsing, timetable processing, task search, and local HTTP API shape.
 - SwiftUI/AppKit app shell with native sidebar navigation, Liquid Glass-styled dashboard/task/timetable/EPR surfaces, settings, WebKit login, menu bar item, notifications, and floating clock panel.
+- Native app bundle metadata, MYTGS app icon, Sparkle update foundation, and basic Xcode UI smoke tests.
 
 ## Open In Xcode
 
@@ -26,9 +27,15 @@ The Swift package remains available for command-line development and core checks
 swift test
 swift build --product MYTGSMac
 swift run MYTGSCoreChecks
+xcodebuild -project MYTGS.xcodeproj -scheme MYTGS -configuration Debug build
+xcodebuild test -project MYTGS.xcodeproj -scheme MYTGS -configuration Debug -destination 'platform=macOS'
 ```
 
-`swift test` runs the offline fixture test suite. `MYTGSCoreChecks` remains a quick smoke check.
+`swift test` runs the offline fixture test suite. `MYTGSCoreChecks` remains a quick smoke check. The Xcode test command runs the signed-out UI smoke tests.
+
+## Live Firefly Testing
+
+Before a public build, run through `Docs/ManualLiveTesting.md` with a real Firefly account. Do not commit or share live Firefly responses, screenshots, tokens, names, IDs, emails, or task content.
 
 ## Release Prep
 
